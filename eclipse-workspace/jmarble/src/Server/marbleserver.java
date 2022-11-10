@@ -2,25 +2,32 @@ package Server;
 
 import java.util.Vector;
 
-import Object.Tile;
-import Object.CityTile;
-import Object.SpecialTile;
-import Object.IsLandTile;
 
+import Pack_Model.EventBoard;
+import Pack_Model.NormalBoard;
+import Pack_Model.Board;
 public class marbleserver {
-	private Vector<Tile> tileList;
-	
+	Vector<Board> areaArr; //Tile 객체를 담는 tilsList 
 	
 	public marbleserver() {
-		initSetting();
+			initTile();
+			initSetting();
+			
+	}
+	private void initTile() {
+		
 	}
 	public void initSetting() {
 		
-		tileList = new Vector<>();
-		Tile T0 = new SpecialTile("시작", 1, 1, 650, 650);
-		Tile T1 = new CityTile("이천",1,1,550,650);
-		tileList.add(T0);
-		tileList.add(T1);
+		areaArr = new Vector<>();
+		Board T0 = new EventBoard("시작", 1, 720, 660);
+		Board T1 = new EventBoard("산불",1,620,660);
+		Board T2 = new NormalBoard("강릉", 0, 0, 0, null, 0, null, 0, 0, 0, 0, 0);
+		
+		
+		areaArr.add(T0);
+		areaArr.add(T1);
+		areaArr.add(T2);
 		
 	}
 }
